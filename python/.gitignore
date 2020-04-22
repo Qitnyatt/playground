@@ -1,3 +1,6 @@
-**/*
-!.gitignore
-!new_day_new_folder.py
+# Ignore everything
+*
+# Allow subfolders (!)
+!*/
+
+!/.gitignore
