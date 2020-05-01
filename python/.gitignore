@@ -4,3 +4,7 @@
 !*/
 
 !/.gitignore
+
+!/y2020/__init__.py
+!/y2020/m05/__init__.py
+!/y2020/m05/d01/__init__.py
