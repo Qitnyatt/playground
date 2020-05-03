@@ -1,27 +1,20 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-from datetime import datetime
-import os
 import pathlib
-import sys
+from datetime import datetime
 
 
-def new_day_new_folder():
-    path_pieces = []
-    for template in 'y%Y/m%m/d%d'.split('/'):
-        piece = datetime.strftime(datetime.utcnow(), template)
-        path_pieces.append(piece)
-        current_path = os.sep.join(path_pieces)
-        pathlib.Path(current_path).mkdir(parents=True, exist_ok=True)
-        current_path = current_path + os.sep + '__init__.py'
-        if not os.path.exists(current_path):
-            with open(current_path, 'a'):
-                os.utime(current_path, None)
+def new_day_new_folder(base_dir: pathlib.Path) -> None:
+    curr_dir = base_dir
+    for piece in 'y%Y/m%m/d%d'.split('/'):
+        curr_dir = curr_dir.joinpath(datetime.strftime(datetime.utcnow(), piece))
+        curr_dir.mkdir(parents=True, exist_ok=True)
+        (curr_dir / '__init__.py').touch()
 
 
 def main():
-    new_day_new_folder()
+    new_day_new_folder(pathlib.Path(__file__).parent)
 
 
 if __name__ == '__main__':
