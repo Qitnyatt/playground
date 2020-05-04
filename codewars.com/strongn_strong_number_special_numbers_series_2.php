@@ -1,6 +1,6 @@
 <?php
 
-// https://www.codewars.com/kata/5a4d303f880385399b000001/train/php/**/
+// https://www.codewars.com/kata/5a4d303f880385399b000001/train/php
 
 function strong($n)
 {
