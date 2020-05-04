@@ -1,4 +1,4 @@
-# https://www.codewars.com/kata/bystate/train/python
+# https://www.codewars.com/kata/59d0ee709f0cbcf65400003b/train/python
 
 
 def by_state(s: str):
